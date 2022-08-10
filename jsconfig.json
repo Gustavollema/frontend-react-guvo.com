@@ -1,0 +1,6 @@
+{
+    "compilerOptions": {
+      "baseUrl": "src"
+    },
+    "include": ["src", "src/views/Home/Home.jsx", "src/index.jsx", "presentes.js"]
+  }

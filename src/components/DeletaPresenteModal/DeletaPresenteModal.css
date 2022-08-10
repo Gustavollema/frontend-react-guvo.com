@@ -1,0 +1,39 @@
+.DeletaPresenteModal {
+    margin-top: -20px;
+  }
+  
+  .DeletaPresenteModal > div {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+  }
+  
+  .DeletaPresenteModal__foto {
+    position: absolute;
+    right: 0px;
+    bottom: 10px;
+    width: 80px;
+  }
+  
+  .DeletaPresenteModal__confirmar,
+  .DeletaPresenteModal__cancelar {
+    border: none;
+    border-radius: 5px;
+    font-family: "Exo", sans-serif;
+    padding: 5px;
+    max-width: 280px;
+    text-align: center;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    width: 48%;
+    color: white;
+  }
+  
+  .DeletaPresenteModal__confirmar {
+    background-color: royalblue;
+  }
+  
+  .DeletaPresenteModal__cancelar {
+    background-color: red;
+  }

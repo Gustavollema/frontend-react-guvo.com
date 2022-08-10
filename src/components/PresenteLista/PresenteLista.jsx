@@ -1,3 +1,4 @@
+import './PresenteLista.css'
 import React, {useState, useEffect, useCallback} from 'react';
 import PresenteListaItem from 'components/PresenteListaItem/PresenteListaItem';
 import { PresenteService } from 'Services/PresenteService';
@@ -6,7 +7,7 @@ import PresenteDetalhesModal from 'components/PresenteDetalhesModal/PresenteDeta
 
 import { ActionMode } from "constants/index";
 
-export default function PresenteLista({ presenteCriado, 
+function PresenteLista({ presenteCriado, 
   mode, 
   updatePresente, 
   deletePresente, 
@@ -88,3 +89,5 @@ export default function PresenteLista({ presenteCriado,
 
  </div>
 };
+
+export default PresenteLista;

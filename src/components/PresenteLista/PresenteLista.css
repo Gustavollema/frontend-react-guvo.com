@@ -1,8 +1,9 @@
 
 .PresenteLista {
+  margin-top: 50px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 25px 100px;
+    grid-gap: 25px 10px;
   }
   
   @media (max-width: 1220px) {

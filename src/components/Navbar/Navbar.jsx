@@ -1,18 +1,39 @@
-import './Navbar.css'
+import { ActionMode } from "constants/index";
+import "./Navbar.css";
 
-function Navbar() {
-    return (
-        <>
-        <section className="container-navbar">
-            <img id="logo-guvo" src="../assets/images/logo.png" alt=""></img>
+function Navbar({ createPresente, updatePresente, mode, deletePresente }) {
+  return (
+    <>
+      <section className="container-navbar">
+        <img id="logo-guvo" src="../assets/images/logo.png" alt=""></img>
         <div className="menu">
-            <button className="btn_menu">Adicionar</button>
-            <button className="btn_menu">Editar</button>
-            <button className="btn_menu">Deletar</button>
+          <button
+            type="button"
+            className={`btn_menu ${
+              mode === ActionMode.ATUALIZAR && "Presente--ativa"
+            }`}
+            onClick={() => updatePresente()}
+          >Editar
+          </button>
+
+          <button
+            type="button"
+            className={`btn_menu ${
+              mode === ActionMode.DELETAR && "Presente--deletar"
+            }`}
+            onClick={() => deletePresente()}
+          >Deletar
+          </button>
+          <button
+            type="button"
+            className="btn_menu"
+            onClick={() => createPresente()}
+          >Adicionar
+          </button>
         </div>
-        </section>
-        </>
-    );
+      </section>
+    </>
+  );
 }
 
-export default Navbar
+export default Navbar;

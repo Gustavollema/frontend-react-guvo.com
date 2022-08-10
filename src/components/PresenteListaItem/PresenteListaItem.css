@@ -1,14 +1,15 @@
 .PresenteListaItem {
     font-family: "Exo";
-    background: rgba(255, 255, 255, 0.3);
+    background: #e41313;
     border-radius: 10px;
     padding: 10px;
     width: 315px;
     display: flex;
     justify-content: space-between;
     position: relative;
+    border-radius: 10px;
+    color: white;
     cursor: pointer;
-    transition: all 0.5s;
 
   }
 
@@ -34,7 +35,7 @@
   }
   
   .PresenteListaItem__tag {
-    background-color: darkviolet !important;
+    background-color: black !important;
     color: white !important;
     position: absolute;
     font-size: 0.6em;
@@ -60,20 +61,20 @@
     width: 100%;
   }
   
-  .PresenteItem__titulo {
+  .PresenteListaItem__titulo {
     font-size: 1.5em;
     font-weight: 700;
     line-height: 100%;
 
   }
   
-  .PresenteItem__marca {
+  .PresenteListaItem__marca {
     font-size: 0.85em;
     width: 100%;
   }
 
-  .PresenteItem__preco {
-    color: darkviolet;
+  .PresenteListaItem__preco {
+    color: white;
   }
   
   .Acoes {
@@ -97,11 +98,12 @@
   }
   
   .Acoes__remover {
-    background-color: red;
+    background-color: rgb(160, 0, 0);
   }
   
   .Acoes__adicionar {
-    background-color: darkviolet;
+    background-color: black;
+    border: 1px solid white
   }
 
   .Acoes__remover:hover {
@@ -109,33 +111,17 @@
   }
   
   .Acoes__adicionar:hover {
-    background-color: rgb(94, 0, 134);
+    background-color: white;
+    color: black;
+    border: 1px solod black;
   }
   
   .Acoes__adicionar--preencher {
-    width: 100%;
+    width: 70%;
   }
   
   .PresenteListaItem__foto {
     height: 150px;
-    margin-right: -60px;
-  }
-
-  .PresenteListaItem__badge {
-    background-color: rgb(94, 0, 134);
-    width: 20px;
-    height: 20px;
-    text-align: center;
-    vertical-align: middle;
-    position: absolute;
-    color: white;;
-    font-size: .8em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    top: -9px;
-    left: -9px;
   }
 
   .PresenteListaItem--deletar {

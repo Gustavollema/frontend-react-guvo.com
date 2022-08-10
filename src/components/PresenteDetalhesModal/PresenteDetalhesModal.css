@@ -1,0 +1,63 @@
+.PresentesDetalhesModal {
+    font-family: "Exo";
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    padding: 10px 0px 10px 10px;
+    max-height: 350px;
+    box-sizing: border-box;
+    width: 315px;
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+  }
+  
+  .PresentesDetalhesModal > div {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+  
+  .PresentesDetalhesModal__titulo {
+    font-size: 2em;
+    font-weight: 700;
+    line-height: 100%;
+  }
+  
+  .PresentesDetalhesModal__descricao {
+    font-size: 1em;
+  }
+  
+  .PresentesDetalhesModal__preco {
+    color: darkviolet;
+    font-size: 2.5em;
+  }
+  
+  .PresentesDetalhesModal__foto {
+    margin-right: -100px;
+    z-index: 0;
+  }
+  
+  @media (max-width: 400px) {
+    .PresentesDetalhesModal {
+      width: 210px;
+      height: 100vh;
+    }
+  
+    .PresentesDetalhesModal__foto {
+      height: 250px;
+      margin-top: 50px;
+      margin-right: -100px;
+    }
+  
+    .PresentesDetalhesModal__preco {
+      font-size: 2em;
+    }
+  
+    .PresentesDetalhesModal__titulo {
+      font-size: 1.5em;
+    }
+  
+    .PresentesDetalhesModal__descricao {
+      font-size: 0.9em;
+    }
+  }

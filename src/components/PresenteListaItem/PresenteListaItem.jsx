@@ -46,13 +46,13 @@ function PresenteListaItem({
       onClick={() => clickItem(presente.id)}
     >
       <div>
-        <div className="PresenteItem__titulo">{presente.titulo}</div>
-        <div className="PresenteItem__preco">
+        <div className="PresenteListaItem__titulo">{presente.titulo}</div>
+        <div className="PresenteListaItem__preco">
           {" "}
           R$ {presente.preco.toFixed(2)}
         </div>
-        <div className="PresenteItem__marca">{presente.marca}</div>
-        <div className="PresenteItem__acoes Acoes">
+        <div className="PresenteListaItem__marca">{presente.marca}</div>
+        <div className="PresenteListaItem__acoes Acoes">
           <button
             disabled={mode !== ActionMode.NORMAL}
             className={`Acoes__adicionar ${
