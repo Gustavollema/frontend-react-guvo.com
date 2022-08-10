@@ -1,0 +1,31 @@
+#logo-guvo {
+    height: 50px;
+}
+
+.container-navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn_menu {
+    border-radius: 5px;
+    border-style: none;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+}
+
+.btn_menu:hover {
+    background-color: rgb(131, 9, 9);
+
+}
