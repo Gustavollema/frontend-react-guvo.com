@@ -4,28 +4,24 @@ import "./AdicionaEditaPresenteModal.css";
 import { PresenteService } from "Services/PresenteService";
 import { ActionMode } from "constants/index";
 
-function AdicionaEditaPresenteModal({ 
-  fecharModal, 
-  onCreatePresente, 
-  mode, 
-  presenteToUpdate, 
-  onUpdatePresente }) 
-  
-  {
+function AdicionaEditaPresenteModal({
+  fecharModal,
+  onCreatePresente,
+  mode,
+  presenteToUpdate,
+  onUpdatePresente,
+}) {
   const form = {
-    produto: presenteToUpdate?.produto ?? '',
-    marca: presenteToUpdate?.marca ?? '',
-    foto: presenteToUpdate?.foto ?? '',
+    produto: presenteToUpdate?.produto ?? "",
+    marca: presenteToUpdate?.marca ?? "",
+    foto: presenteToUpdate?.foto ?? "",
   };
 
   const [state, setState] = useState(form);
   const [canDesable, setCanDesable] = useState(true);
 
   const canDesableSendButton = () => {
-    const response = !Boolean(
-        state.foto.length &&
-        String(state.preco).length
-    );
+    const response = !Boolean(state.foto.length && String(state.preco).length);
     setCanDesable(response);
   };
 
@@ -42,47 +38,52 @@ function AdicionaEditaPresenteModal({
 
     const { produto, marca, preco, foto } = state;
 
-    const titulo = produto 
+    const titulo = produto;
 
     const presente = {
       ...(presenteToUpdate && { _id: presenteToUpdate?.id }),
       produto: titulo,
       marca,
       preco,
-      foto: `assets/images/${renomeiaCaminhoFoto(foto)}`
-    }
+      foto: `assets/images/${renomeiaCaminhoFoto(foto)}`,
+    };
 
     const serviceCall = {
       [ActionMode.NORMAL]: () => PresenteService.create(presente),
-      [ActionMode.ATUALIZAR]: () => PresenteService.updtateById(presenteToUpdate?.id, presente),
-    }
+      [ActionMode.ATUALIZAR]: () =>
+        PresenteService.updtateById(presenteToUpdate?.id, presente),
+    };
 
     const response = await serviceCall[mode]();
 
     const actionResponse = {
       [ActionMode.NORMAL]: () => onCreatePresente(response),
       [ActionMode.ATUALIZAR]: () => onUpdatePresente(response),
-    }
+    };
 
     actionResponse[mode]();
 
     const reset = {
-      produto: '',
-      marca: '',
-      foto: '',
-    }
+      produto: "",
+      marca: "",
+      foto: "",
+    };
 
     setState(reset);
 
     fecharModal();
-    
   };
 
   return (
     <Modal fecharModal={fecharModal}>
       <div className="AdicionaPresenteModal">
         <form autoComplete="off">
-          <h2> { ActionMode.ATUALIZAR === mode ? 'Atualizar' : 'Adicionar ao' } Catálogo </h2>
+          <h2>
+            {" "}
+            {ActionMode.ATUALIZAR === mode
+              ? "Atualizar"
+              : "Adicionar ao"} Lista{" "}
+          </h2>
           <div>
             <label className="AdicionaPresenteModal__text" htmlFor="preco">
               {" "}
@@ -111,8 +112,7 @@ function AdicionaEditaPresenteModal({
               onChange={(e) => handleChange(e, "produto")}
             />
           </div>
-          <div>
-          </div>
+          <div></div>
           <div>
             <label className="AdicionaPresenteModal__text" htmlFor="marca">
               {" "}
@@ -148,8 +148,9 @@ function AdicionaEditaPresenteModal({
             type="submit"
             disabled={canDesable}
             className="AdicionaPresenteModal__enviar"
-            onClick={handleSend}>
-           { ActionMode.NORMAL === mode ? 'Enviar' : 'Atualizar' }
+            onClick={handleSend}
+          >
+            {ActionMode.NORMAL === mode ? "Enviar" : "Atualizar"}
           </button>
         </form>
       </div>

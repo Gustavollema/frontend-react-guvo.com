@@ -13,7 +13,8 @@ function Navbar({ createPresente, updatePresente, mode, deletePresente }) {
               mode === ActionMode.ATUALIZAR && "Presente--ativa"
             }`}
             onClick={() => updatePresente()}
-          >Editar
+          >
+            Editar
           </button>
 
           <button
@@ -22,13 +23,15 @@ function Navbar({ createPresente, updatePresente, mode, deletePresente }) {
               mode === ActionMode.DELETAR && "Presente--deletar"
             }`}
             onClick={() => deletePresente()}
-          >Deletar
+          >
+            Deletar
           </button>
           <button
             type="button"
             className="btn_menu"
             onClick={() => createPresente()}
-          >Adicionar
+          >
+            Adicionar
           </button>
         </div>
       </section>

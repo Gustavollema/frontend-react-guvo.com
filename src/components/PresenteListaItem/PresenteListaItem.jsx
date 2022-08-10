@@ -3,13 +3,18 @@ import "./PresenteListaItem.css";
 
 function PresenteListaItem({
   presente,
-  presenteSelecionada,
+  presenteSelecionado,
   index,
   onRemove,
   onAdd,
   clickItem,
   mode,
 }) {
+  const badgeCounter = (canRender, index) =>
+    Boolean(canRender) && (
+      <span className="PresenteListaItem__badge"> {presenteSelecionado} </span>
+    );
+
   const removeButton = (canRender, index) =>
     Boolean(canRender) && (
       <button
@@ -45,6 +50,7 @@ function PresenteListaItem({
       ${mode === ActionMode.DELETAR && "PresenteListaItem--deletar"}`}
       onClick={() => clickItem(presente.id)}
     >
+      {badgeCounter(presenteSelecionado, index)}
       <div>
         <div className="PresenteListaItem__titulo">{presente.titulo}</div>
         <div className="PresenteListaItem__preco">
@@ -56,7 +62,7 @@ function PresenteListaItem({
           <button
             disabled={mode !== ActionMode.NORMAL}
             className={`Acoes__adicionar ${
-              !presenteSelecionada && "Acoes__adicionar--preencher"
+              !presenteSelecionado && "Acoes__adicionar--preencher"
             }`}
             onClick={(e) => {
               e.stopPropagation();
@@ -66,7 +72,7 @@ function PresenteListaItem({
             Presentear
           </button>
 
-          {removeButton(presenteSelecionada, index)}
+          {removeButton(presenteSelecionado, index)}
           {badgeAction(mode !== ActionMode.NORMAL)}
         </div>
       </div>

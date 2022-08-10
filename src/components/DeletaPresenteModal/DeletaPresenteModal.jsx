@@ -2,11 +2,11 @@ import "./DeletaPresenteModal.css";
 import Modal from "components/Modal/Modal";
 import { PresenteService } from "Services/PresenteService";
 
-function DeletaPresenteModal({ 
-    fecharModal, 
-    presenteParaDeletar, 
-    onDeletePresente }) 
-    {
+function DeletaPresenteModal({
+  fecharModal,
+  presenteParaDeletar,
+  onDeletePresente,
+}) {
   const handleDelete = async (presente) => {
     await PresenteService.deleteById(presente.id);
     onDeletePresente(presente);
@@ -38,7 +38,10 @@ function DeletaPresenteModal({
             {" "}
             Confirmar{" "}
           </button>
-          <button onClick={fecharModal} className="DeletaPresenteModal__cancelar">
+          <button
+            onClick={fecharModal}
+            className="DeletaPresenteModal__cancelar"
+          >
             {" "}
             Cancelar{" "}
           </button>

@@ -31,7 +31,7 @@ export const PresenteService = {
       mode: "cors",
       headers: { "Content-Type": "application/json" },
     }).then(parseTransformItem),
-    
+
   updtateById: (id, presente) =>
     fetch(Api.updatePresenteById(id), {
       method: "PUT",
@@ -43,9 +43,7 @@ export const PresenteService = {
     }).then(parseResponse),
 
   deleteById: (id) =>
-    fetch(Api.deletePresenteById(id), { method: "DELETE" }).then(
-      parseResponse
-    ),
+    fetch(Api.deletePresenteById(id), { method: "DELETE" }).then(parseResponse),
 };
 
 export default PresenteService;

@@ -4,7 +4,7 @@
     min-height: 200px;
     max-width: 700px;
     max-height: 450px;
-    background: #50c5ee;
+    background: brown;
     position: relative;
     border-radius: 10px;
     box-sizing: border-box;
@@ -23,16 +23,14 @@
     right: 20px;
     cursor: pointer;
     padding: 5px;
-    border-radius: 50%;
     color: white;
     transform: rotate(45deg);
     transition: all 1s;
-    background-color: rgba(0, 0, 0, 0.2);
     z-index: 1;
   }
   
   .Modal__fechar:hover {
-    background-color: rgba(0, 0, 0, 0.4);
+    color: black;
   }
   
   .Modal__body {
