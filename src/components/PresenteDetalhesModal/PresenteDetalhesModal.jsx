@@ -8,7 +8,7 @@ function PresentesDetalhesModal({ presente, fecharModal }) {
         <div>
           <div className="PresentesDetalhesModal__titulo">
             {" "}
-            {presente.titulo}{" "}
+            {presente.produto}{" "}
           </div>
           <div className="PresentesDetalhesModal__preco">
             R$ {Number(presente.preco).toFixed(2)}

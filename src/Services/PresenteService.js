@@ -3,13 +3,10 @@ import { Api } from "helpers/Api";
 const parseResponse = (response) => response.json();
 
 const transformPresente = (presente) => {
-  const [produto] = presente.produto.split(" com ");
-
   return {
     ...presente,
     id: presente._id,
     titulo: presente.produto,
-    produto,
   };
 };
 

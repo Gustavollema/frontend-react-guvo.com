@@ -14,6 +14,7 @@ function AdicionaEditaPresenteModal({
   const form = {
     produto: presenteToUpdate?.produto ?? "",
     marca: presenteToUpdate?.marca ?? "",
+    preco: presenteToUpdate?.preco ?? "",
     foto: presenteToUpdate?.foto ?? "",
   };
 
@@ -65,6 +66,7 @@ function AdicionaEditaPresenteModal({
 
     const reset = {
       produto: "",
+      preco: '',
       marca: "",
       foto: "",
     };
@@ -82,7 +84,7 @@ function AdicionaEditaPresenteModal({
             {" "}
             {ActionMode.ATUALIZAR === mode
               ? "Atualizar"
-              : "Adicionar ao"} Lista{" "}
+              : "Adicionar à"} Lista{" "}
           </h2>
           <div>
             <label className="AdicionaPresenteModal__text" htmlFor="preco">
@@ -103,7 +105,7 @@ function AdicionaEditaPresenteModal({
               {" "}
               Produto:{" "}
             </label>
-            <input
+            <input className="input-produto"
               id="produto"
               placeholder="Geladeira, por exemplo"
               type="text"

@@ -2,7 +2,7 @@ const PresenteContext = {
   presenteEndpoint: () => `${Api.baseUrl}/presentes`,
   presenteLista: () => `${PresenteContext.presenteEndpoint()}/find-presentes`,
   presenteById: (id) =>
-    `${PresenteContext.presenteEndpoint()}/find-presente/${id}`,
+    `${PresenteContext.presenteEndpoint()}/find-presentes/${id}`,
   createPresente: () => `${PresenteContext.presenteEndpoint()}/create`,
   updatePresenteById: (id) =>
     `${PresenteContext.presenteEndpoint()}/update/${id}`,
@@ -11,6 +11,6 @@ const PresenteContext = {
 };
 
 export const Api = {
-  baseUrl: "https://api-guvocom.herokuapp.com/",
+  baseUrl: "http://localhost:3000",
   ...PresenteContext,
 };

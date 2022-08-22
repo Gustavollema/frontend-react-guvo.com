@@ -2,13 +2,14 @@
     font-family: "Exo";
     background: rgba(255, 255, 255, 0.3);
     border-radius: 10px;
-    padding: 10px 0px 10px 10px;
+    padding: 10px 20px 10px 10px;
     max-height: 350px;
     box-sizing: border-box;
-    width: 315px;
+    width: 100%;
     display: flex;
     justify-content: space-around;
     position: relative;
+    gap: 10px;
   }
   
   .PresentesDetalhesModal > div {
@@ -28,25 +29,20 @@
   }
   
   .PresentesDetalhesModal__preco {
-    color: darkviolet;
+    color: white;
     font-size: 2.5em;
   }
   
   .PresentesDetalhesModal__foto {
-    margin-right: -100px;
+    margin-right: -10px;
     z-index: 0;
+    height: 250px;
   }
   
   @media (max-width: 400px) {
     .PresentesDetalhesModal {
       width: 210px;
       height: 100vh;
-    }
-  
-    .PresentesDetalhesModal__foto {
-      height: 250px;
-      margin-top: 50px;
-      margin-right: -100px;
     }
   
     .PresentesDetalhesModal__preco {

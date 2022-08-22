@@ -16,22 +16,22 @@ function PresenteLista({
 }) {
   const [presentes, setPresentes] = useState([]);
 
-  const [presenteEscolhida, setPresenteEscolhida] = useState({});
+  const [presenteEscolhido, setPresenteEscolhido] = useState({});
 
   const [presenteModal, setPresenteModal] = useState(false);
 
   const adicionarPresente = (presenteIndex) => {
     const presente = {
-      [presenteIndex]: Number(presenteEscolhida[presenteIndex] || 0) + 1,
+      [presenteIndex]: Number(presenteEscolhido[presenteIndex] || 0) + 1,
     };
-    setPresenteEscolhida({ ...presenteEscolhida, ...presente });
+    setPresenteEscolhido({ ...presenteEscolhido, ...presente });
   };
 
   const removerPresente = (presenteIndex) => {
     const presente = {
-      [presenteIndex]: Number(presenteEscolhida[presenteIndex] || 0) - 1,
+      [presenteIndex]: Number(presenteEscolhido[presenteIndex] || 0) - 1,
     };
-    setPresenteEscolhida({ ...presenteEscolhida, ...presente });
+    setPresenteEscolhido({ ...presenteEscolhido, ...presente });
   };
 
   const getLista = async () => {
@@ -72,20 +72,21 @@ function PresenteLista({
     getLista();
   }, [presenteEditado, presenteRemovido]);
 
-  return (
-    <div className="PresenteLista">
-      {presentes.map((presente, index) => (
+  return <div className="PresenteLista">
+  {presentes.map((presente, index) => 
+
         <PresenteListaItem
           mode={mode}
           key={`PresenteListaItem-${index}`}
           presente={presente}
-          presenteSelecionado={presenteEscolhida[index]}
+          presenteSelecionado={presenteEscolhido[index]}
           index={index}
-          onRemove={(index) => removerPresente(index)}
-          onAdd={(index) => adicionarPresente(index)}
+          onRemove={index => removerPresente(index)}
+          onAdd={index => adicionarPresente(index)}
           clickItem={(presenteId) => getPresenteById(presenteId)}
         />
-      ))}
+      )}
+
       {presenteModal && (
         <PresenteDetalhesModal
           presente={presenteModal}
@@ -93,7 +94,6 @@ function PresenteLista({
         />
       )}
     </div>
-  );
 }
 
 export default PresenteLista;
